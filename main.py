@@ -1,11 +1,15 @@
 from puissance4.board import Board
-from puissance4.turn import Turn   
 
 def main() :
 
     board = Board()
-    board.display()
-    
+    flag = True
+
+    while flag:
+        chip = str(input(f"Player chip : "))
+        column = int(input(f"Player column : "))
+        board.place(chip,column)
+        board.display()
 
 if __name__ == "__main__":
     main()
