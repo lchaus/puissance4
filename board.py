@@ -3,10 +3,10 @@ import copy
 
 boardr = [' ' for i in range(7)]
 board = [copy.deepcopy(boardr) for i in range(6)]
-board[1][0] = "x"
-print(board)
+#board[1][0] = "x"
+#print(board)
 #print(f"|       |       |       |       |       |       |       |")
-board[1][5] = "o"
+#board[1][5] = "o"
 
 print(f"+ - - - + - - - + - - - + - - - + - - - + - - - + - - - +")
 print(f"|   {board[0][0]}   |   {board[0][1]}   |   {board[0][2]}   |   {board[0][3]}   |   {board[0][4]}   |   {board[0][5]}   |   {board[0][6]}   |")
@@ -21,3 +21,4 @@ print(f"|   {board[4][0]}   |   {board[4][1]}   |   {board[4][2]}   |   {board[4
 print(f"+ - - - + - - - + - - - + - - - + - - - + - - - + - - - +")
 print(f"|   {board[5][0]}   |   {board[5][1]}   |   {board[5][2]}   |   {board[5][3]}   |   {board[5][4]}   |   {board[5][5]}   |   {board[5][6]}   |")
 print(f"+ - - - + - - - + - - - + - - - + - - - + - - - + - - - +")
+#print(board)
