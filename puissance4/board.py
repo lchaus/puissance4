@@ -1,12 +1,11 @@
 import copy
-#[print("-", end=" ") if i%4 != 0 else print("+", end = " ") for i in range(29)]
-#print(f"|       |       |       |       |       |       |       |")
 
 class Board():
+
     def __init__(self):
         boardr = [' ' for i in range(7)]
         self.board = [copy.deepcopy(boardr) for i in range(6)]
-
+    
     def display(self):
         print(f"+ - - - + - - - + - - - + - - - + - - - + - - - + - - - +")
         print(f"|   {self.board[0][0]}   |   {self.board[0][1]}   |   {self.board[0][2]}   |   {self.board[0][3]}   |   {self.board[0][4]}   |   {self.board[0][5]}   |   {self.board[0][6]}   |")
