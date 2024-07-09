@@ -16,13 +16,16 @@ def main():
 
     while flag:
         player1.play()
-        player2.play()
         #if player1.wins():
         #    flag = false
-        # yay !
+        #    print(f"{player1.name} wins the game !!!")
+        player2.play()
+        #if player2.wins():
+        #    flag = false
+        #    print(f"{player2.name} wins the game !!!")
         
         #TODO : column index 0/1 mixed 
-        #
+        
 if __name__ == "__main__":
     main()
 
