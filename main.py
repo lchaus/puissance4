@@ -20,7 +20,9 @@ def main():
         #if player1.wins():
         #    flag = false
         # yay !
-
+        
+        #TODO : column index 0/1 mixed 
+        #
 if __name__ == "__main__":
     main()
 

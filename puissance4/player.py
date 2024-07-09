@@ -8,5 +8,8 @@ class Player():
     
     def play(self):
         column = int(input(f"{self.name}, in which column do you want to add your token ?"))
-        self.board.place(self.symbol, column)
+        try:
+            self.board.place(self.symbol, column)
+        except ValueError:
+            print("Choose another column, this column is full")
         self.board.display() 
