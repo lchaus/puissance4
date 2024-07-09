@@ -8,8 +8,14 @@ def main():
 
     name1 = str(input("Player 1, enter your name ?"))
     symbol1 = str(input("Player 1, enter your symbol (x or o) ?"))
-    name2 = str(input("Player 1, enter your name ?"))
-    symbol2 = str(input("Player 1, enter your symbol (x or o) ?"))
+    while symbol1 not in ('x', 'o'):
+        symbol1 = str(input("Player 1, enter your symbol (x or o) ?"))
+
+    name2 = str(input("Player 2, enter your name ?"))
+    symbol2 = str(input("Player 2, enter your symbol (x or o) ?"))
+    while symbol1 not in ('x', 'o') and symbol2 == symbol2:
+        symbol1 = str(input("Player 2, enter your symbol (x or o) ?"))
+
 
     player1 = Player(name1, symbol1, board)
     player2 = Player(name2, symbol2, board)
