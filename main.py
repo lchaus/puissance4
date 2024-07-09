@@ -1,4 +1,5 @@
 from puissance4.board import Board
+from puissance4.turn import Turn   
 
 def main() :
 
