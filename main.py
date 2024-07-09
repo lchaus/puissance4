@@ -17,6 +17,9 @@ def main():
     while flag:
         player1.play()
         player2.play()
+        #if player1.wins():
+        #    flag = false
+        # yay !
 
 if __name__ == "__main__":
     main()
