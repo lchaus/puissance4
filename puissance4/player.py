@@ -1,2 +1,12 @@
+from puissance4.board import Board
+
 class Player():
-    pass
+    def __init__(self, name, symbol, board : Board):
+        self.name = name
+        self.symbol = symbol
+        self.board = board
+    
+    def play(self):
+        column = int(input(f"{self.name}, in which column do you want to add your token ?"))
+        self.board.place(self.symbol, column)
+        self.board.display() 

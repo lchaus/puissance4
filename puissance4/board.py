@@ -19,6 +19,7 @@ class Board:
         for row in self.board:
             cell += '+---'*7 + '+' + '\n' + '|'+ '|'.join(row) +'\n'
         print(cell)
+
 #import copy
 #
 #class Board():

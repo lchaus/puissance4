@@ -1,15 +1,22 @@
 from puissance4.board import Board
+from puissance4.player import Player
 
-def main() :
+def main():
 
     board = Board()
     flag = True
 
+    name1 = str(input("Player 1, enter your name ?"))
+    symbol1 = str(input("Player 1, enter your symbol (x or o) ?"))
+    name2 = str(input("Player 1, enter your name ?"))
+    symbol2 = str(input("Player 1, enter your symbol (x or o) ?"))
+
+    player1 = Player(name1, symbol1, board)
+    player2 = Player(name2, symbol2, board)
+
     while flag:
-        chip = str(input(f"Player chip : "))
-        column = int(input(f"Player column : "))
-        board.place(chip,column)
-        board.display()
+        player1.play()
+        player2.play()
 
 if __name__ == "__main__":
     main()
