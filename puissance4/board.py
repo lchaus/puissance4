@@ -20,3 +20,6 @@ class Board():
         print(f"+ - - - + - - - + - - - + - - - + - - - + - - - + - - - +")
         print(f"|   {self.board[5][0]}   |   {self.board[5][1]}   |   {self.board[5][2]}   |   {self.board[5][3]}   |   {self.board[5][4]}   |   {self.board[5][5]}   |   {self.board[5][6]}   |")
         print(f"+ - - - + - - - + - - - + - - - + - - - + - - - + - - - +")
+
+    def set_cell(self):
+        pass
