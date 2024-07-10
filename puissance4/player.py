@@ -1,5 +1,4 @@
 from puissance4.board import Board
-from icecream import ic
 
 class Player():
     def __init__(self, name, symbol, board : Board):
