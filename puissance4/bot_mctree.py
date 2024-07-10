@@ -55,3 +55,30 @@ class MCtreeNode:
         self.wins += result
         if self.parent:
             self.parent.backpropagate(result)
+
+class MCTS:
+
+    def __init__(self, root):
+        self.root = root
+    
+    def run(self, iterations=1000):
+        for _ in range(iterations):
+            node = self.root
+            # Selection
+            while node.untried_moves == [] and node.children != []:
+                node = node.select_child()
+            # Expansion
+            if node.untried_moves != []:
+                node = node.expand()
+            # Simulation
+            result = node.simulate()
+            # Backpropagation
+            node.backpropagate(result)
+        # Return the move with the most visits
+        best_move = None
+        best_visits = -float('inf')
+        for child in self.root.children:
+            if child.visits > best_visits:
+                best_visits = child.visits
+                best_move = child.move
+        return best_move
