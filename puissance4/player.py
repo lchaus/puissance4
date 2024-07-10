@@ -1,3 +1,5 @@
+import copy
+#from icecream import ic
 from puissance4.board import Board
 
 class Player():
@@ -18,3 +20,16 @@ class Player():
             self.play()
 
         self.board.display() 
+
+
+    def can_play(self):
+        test_board = copy.deepcopy(self.board.board)
+        can_play = True
+        row_full = 0
+        for row in test_board:
+            if '   ' not in set(row):
+                row_full += 1
+        if row_full == 7:
+            can_play = False 
+        return can_play 
+        
