@@ -5,7 +5,7 @@ class Board:
     def place(self,symbol,column):
         if symbol not in ('x', 'o'):
             raise ValueError('must be "x" or "o"')
-        if column < 1 or column > 7:
+        if column < 0 or column > 7:
             raise ValueError('must be between 1 and 7')
 
         for row in range(6, -1, -1):

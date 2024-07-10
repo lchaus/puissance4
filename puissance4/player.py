@@ -7,7 +7,11 @@ class Player():
         self.board = board
     
     def play(self):
-        column = int(input(f"{self.name}, in which column do you want to add your token ?"))
+        try:
+            column = int(input(f"{self.name}, in which column do you want to add your token ?"))
+        except ValueError:
+            print("Invalid character")
+
         try:
             self.board.place(self.symbol, column)
         except ValueError:
