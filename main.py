@@ -1,5 +1,6 @@
 from puissance4.board import Board
 from puissance4.player import Player
+from puissance4.victory import Victory
 
 def main():
 
@@ -13,18 +14,30 @@ def main():
 
     player1 = Player(name1, symbol1, board)
     player2 = Player(name2, symbol2, board)
+    win = Victory(board.board)
 
     while flag:
         player1.play()
-        #if player1.wins():
-        #    flag = false
-        #    print(f"{player1.name} wins the game !!!")
-        player2.play()
-        #if player2.wins():
-        #    flag = false
-        #    print(f"{player2.name} wins the game !!!")
+        win_check = win.check_victory(player1.symbol)
+        print(player1.symbol)
+        if win_check == True:
+            flag = False
+            print(f"{player1.name} wins the game !!!")
+            break
         
-        #TODO : column index 0/1 mixed 
+        player2.play()
+        win_check = win.check_victory(player2.symbol)
+        if win_check == True:
+            flag = False
+            print(f"{player2.name} wins the game !!!")
+            break
+        
+        #TODO : column index 0/1 mixed
+        # 
+    
+
+    # victory = Victory(board)
+    # victory.check_victory('x')
         
 if __name__ == "__main__":
     main()
