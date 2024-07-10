@@ -1,5 +1,3 @@
-from victory import Victory
-
 class Board:
     def __init__(self):
         self.board = [['   ' for _ in range(8)] for _ in range(7)]  
@@ -30,17 +28,6 @@ class Board:
 
     def is_full(self):
         return all(self.board[0][col] != '   ' for col in range(8))
-
-    def get_winner(self):
-        victory = Victory(self.board)
-        if victory.check_victory('x'):
-            return 'x'
-        elif victory.check_victory('o'):
-            return 'o'
-        elif self.is_full():
-            return 'draw'
-        else:
-            return None
 
     
     def display(self):

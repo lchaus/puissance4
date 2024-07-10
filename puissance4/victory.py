@@ -1,4 +1,4 @@
-from puissance4.board import Board
+from board import Board
 from functools import partial
 
 class Victory:
@@ -45,7 +45,18 @@ class Victory:
                 win = self.check_kernel(ker, symbol)
                 if win:
                     return True
-        return win 
+        return win
+    
+    def get_winner(self):
+        victory = Victory(self.board)
+        if victory.check_victory('x'):
+            return 'x'
+        elif victory.check_victory('o'):
+            return 'o'
+        elif self.is_full():
+            return 'draw'
+        else:
+            return None
 
 #    def check_victory(self, symbol):
 #         

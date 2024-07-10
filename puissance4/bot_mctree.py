@@ -13,11 +13,8 @@ class MCtreeNode:
         self.children = []
         self.wins = 0
         self.visits = 0
-        self.untried_moves = [col for col in range(7) if self.board[0][col] == '   ']
+        self.untried_moves = board.get_valid_moves()
 
-    def get_valid_moves(self):
-
-        return [col for col in range(7) if self.board[0][col] == '   ']
 
     def select_child(self):
         best_child = None
@@ -37,24 +34,13 @@ class MCtreeNode:
         self.children.append(child_node)
         return child_node
     
-    def get_winner(self):
-        win = Victory(self.board)
-        if win.check_victory('x'):
-            return 'x'
-        elif win.check_victory('o'):
-            return 'o'
-        elif draw:
-            return 'draw'
-        else:
-            return None
-    
     def simulate(self):
         current_board = deepcopy(self.board)
         current_symbol = 'x' if current_board.get_valid_moves().count() % 2 == 0 else 'o'
         while current_board.get_winner() is None:
             valid_moves = current_board.get_valid_moves()
             move = random.choice(valid_moves)
-            current_board.place_symbol(current_symbol, move)
+            current_board.place(current_symbol, move)
             current_symbol = 'o' if current_symbol == 'x' else 'x'
         winner = current_board.get_winner()
         if winner == 'x':
