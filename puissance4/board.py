@@ -26,6 +26,7 @@ class Board:
         cell = ''
         for row in self.board:
             cell += '+---'*7 + '+' + '\n' + '|'+ '|'.join(row) +'\n'
+        cell += '+---'*7 + '+' + '\n' 
         print(cell)
 
 #import copy
