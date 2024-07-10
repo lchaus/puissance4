@@ -12,4 +12,7 @@ class Player():
             self.board.place(self.symbol, column)
         except ValueError:
             print("Choose another column, this column is full ! ")
+        except IndexError:
+            print("Column must be between 0-6! Try again :")
+
         self.board.display() 
