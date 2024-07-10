@@ -1,4 +1,4 @@
-from board import Board
+from puissance4.board import Board
 from functools import partial
 
 class Victory:
