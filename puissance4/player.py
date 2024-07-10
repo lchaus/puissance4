@@ -1,3 +1,5 @@
+import copy
+from icecream import ic
 from puissance4.board import Board
 
 class Player():
@@ -13,3 +15,13 @@ class Player():
         except ValueError:
             print("Choose another column, this column is full ! ")
         self.board.display() 
+    
+    def can_play(self):
+        symbols = {"o", "x"}
+        test_board = copy.deepcopy(self.board.board)
+        ic(self.board.board)
+        for row in test_board:
+            if '   ' in set(row):
+                return True
+            else: 
+                return False

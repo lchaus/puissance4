@@ -1,6 +1,6 @@
 class Board:
     def __init__(self):
-        self.board = [['   ' for _ in range(8)] for _ in range(7)]  
+        self.board = [['   ' for _ in range(7)] for _ in range(7)]  
 
     def place(self,symbol,column):
         flag = True

@@ -37,19 +37,24 @@ def main():
     win = Victory(board.board)
 
     while flag:
-        player1.play()
-        win_check = win.check_victory(player1.symbol)
-        if win_check == True:
-            flag = False
-            print(f"{player1.name} wins the game !!!\n")
+        if player1.can_play():
+            player1.play()
+            win_check = win.check_victory(player1.symbol)
+            if win_check == True:
+                flag = False
+                print(f"{player1.name} wins the game !!!\n")
+                break
+        if player2.can_play(): 
+            player2.play()
+            win_check = win.check_victory(player2.symbol)
+            if win_check == True:
+                flag = False
+                print(f"{player2.name} wins the game !!!\n")
+                break
+        if (not player1.can_play()) and (not player2.can_play()):
+            print("The board is full ! Every one loses!")
             break
-        
-        player2.play()
-        win_check = win.check_victory(player2.symbol)
-        if win_check == True:
-            flag = False
-            print(f"{player2.name} wins the game !!!\n")
-            break
+
         
 if __name__ == "__main__":
     main()
