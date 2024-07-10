@@ -15,6 +15,10 @@ class MCtreeNode:
         self.visits = 0
         self.untried_moves = [col for col in range(7) if self.board[0][col] == '   ']
 
+    def get_valid_moves(self):
+
+        return [col for col in range(7) if self.board[0][col] == '   ']
+
     def select_child(self):
         best_child = None
         best_value = - 0.01
@@ -28,17 +32,19 @@ class MCtreeNode:
     def expand(self):
         move = self.untried_moves.pop()
         new_board = deepcopy(self.board)
-        new_board.place_symbol('x' if new_board.get_valid_moves().count() % 2 == 0 else 'o', move)
+        new_board.play('x' if new_board.get_valid_moves().count() % 2 == 0 else 'o', move)
         child_node = MCtreeNode(new_board, parent=self, move=move)
         self.children.append(child_node)
         return child_node
     
-    def check_winner(self,board):
-        win = Victory(board)
+    def get_winner(self):
+        win = Victory(self.board)
         if win.check_victory('x'):
             return 'x'
         elif win.check_victory('o'):
             return 'o'
+        elif draw:
+            return 'draw'
         else:
             return None
     
