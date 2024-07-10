@@ -1,4 +1,5 @@
 from puissance4.board import Board
+from icecream import ic
 
 class Player():
     def __init__(self, name, symbol, board : Board):
@@ -7,11 +8,7 @@ class Player():
         self.board = board
     
     def play(self):
-        try:
-            column = int(input(f"{self.name}, in which column do you want to add your token ?"))
-        except ValueError:
-            print("Invalid character")
-
+        column = input(f"{self.name}, in which column do you want to add your token ?")
         try:
             self.board.place(self.symbol, column)
         except ValueError:
