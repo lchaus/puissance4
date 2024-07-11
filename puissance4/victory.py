@@ -62,7 +62,6 @@ class Victory:
         
         #Check rows
         for row in kernel:
-            ic(row, symbol)
             score += self.check_vector(row, symbol)
 
         #Check columns

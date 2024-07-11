@@ -2,6 +2,7 @@ from puissance4.board import Board
 from puissance4.player import Player
 from puissance4.victory import Victory
 from puissance4.ai_player import AI_player
+from icecream import ic
 
 def main():
 
